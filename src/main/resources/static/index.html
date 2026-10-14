@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Secure Banking</title>
+	<link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+	<header><b>HDFC BANK</b><span>Banking System</span></header>
+	<main>
+		<section class="hero">
+			<div><small>YOUR MONEY, YOUR CONTROL</small>
+				<h1>Banking made<br><em>simple.</em></h1>
+				<p>Create accounts, transfer funds and track activity.</p>
+			</div><strong>₹</strong>
+		</section>
+		<div id="notice"></div>
+		<section class="grid">
+			<article>
+				<h2>Create account</h2>
+				<form id="create"><label>Full name<input id="name" required maxlength="100"></label><label>Email<input
+							id="email" type="email" required></label><label>Account type<select id="type">
+							<option>SAVINGS</option>
+							<option>CURRENT</option>
+						</select></label><label>Initial deposit (₹)<input id="initial" type="number" min="0" step=".01"
+							value="0" required></label><button>Create account</button></form>
+			</article>
+			<article>
+				<h2>Account overview</h2>
+				<form id="lookup"><label>Account ID<input id="accountId" type="number" min="1"
+							required></label><button>Find account</button></form>
+				<div id="account" class="account">Find an account to see details.</div>
+				<div class="actions"><button class="alt" id="deposit">Deposit</button><button class="alt"
+						id="withdraw">Withdraw</button><button class="alt" id="refresh">Refresh history</button></div>
+			</article>
+		</section>
+		<article>
+			<h2>Transfer funds</h2>
+			<form id="transfer" class="transfer"><label>From ID<input id="fromId" type="number" min="1"
+						required></label><label>To ID<input id="toId" type="number" min="1"
+						required></label><label>Amount (₹)<input id="transferAmount" type="number" min=".01" step=".01"
+						required></label><button>Transfer</button></form>
+		</article>
+		<article>
+			<h2>Transaction history <small id="count"></small></h2>
+			<div class="table">
+				<table>
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Type</th>
+							<th>Amount</th>
+							<th>Balance after</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody id="rows">
+						<tr>
+							<td colspan="5">Look up an account to view transactions.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</article>
+
+		<footer class="site-footer">
+		    <div class="footer-brand">
+		       
+		        <h3>SecureBank</h3>
+		    </div>
+
+		    <p>Simple, secure, and reliable banking management.</p>
+
+		    <div class="footer-links">
+		        <span>Account Management</span>
+		        <span>•</span>
+		        <span>Transactions</span>
+		        <span>•</span>
+		        <span>Fund Transfers</span>
+		    </div>
+		</footer>
+
+	</main>
+	<script src="/app.js"></script>
+</body>
+
+</html>
