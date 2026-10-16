@@ -1,0 +1,5 @@
+id,accountId,relatedAccountId,type,amount,balanceAfter,description,createdAt
+1,1,,"ACCOUNT_OPENED",5000.00,5000.00,"Account created",2026-10-15T09:25:16.695338Z
+2,2,,"ACCOUNT_OPENED",10000.00,10000.00,"Account created",2026-10-15T09:28:43.849612Z
+3,2,1,"TRANSFER_OUT",3000.00,7000.00,"Transfer to account 1",2026-10-15T09:29:03.898367Z
+4,1,2,"TRANSFER_IN",3000.00,8000.00,"Transfer from account 2",2026-10-15T09:29:03.906172Z

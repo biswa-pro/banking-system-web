@@ -1,8 +1,10 @@
 package com.example.banking.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
+
 
 @Entity
 @Table(
@@ -33,21 +35,35 @@ public class BankAccount {
 
     @Column(nullable = false, updatable = false)
     private Instant createdAt;
+    
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner_id")
+    private User owner;
 
     protected BankAccount() {
+    }
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 
     public BankAccount(
             String fullName,
             String email,
             AccountType accountType,
-            BigDecimal balance) {
+            BigDecimal balance,
+            User owner) {
 
         this.fullName = fullName;
         this.email = email;
         this.accountType = accountType;
         this.balance = balance;
         this.createdAt = Instant.now();
+        this.owner = owner;
     }
 
     public Long getId() {

@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking System | Login</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+<div class="auth-container">
+
+    <div class="brand-panel">
+        <div class="brand-icon">₹</div>
+        <h1>SecureBank</h1>
+        <p>Your money. Your future. Our priority.</p>
+
+        <div class="feature">
+            <span>✓</span> Secure account access
+        </div>
+        <div class="feature">
+            <span>✓</span> Easy banking transactions
+        </div>
+        <div class="feature">
+            <span>✓</span> Track your transaction history
+        </div>
+    </div>
+
+    <div class="form-panel">
+
+        <div class="tabs">
+            <button id="loginTab" class="tab active"
+                    type="button" onclick="showForm('login')">
+                Login
+            </button>
+
+            <button id="signupTab" class="tab"
+                    type="button" onclick="showForm('signup')">
+                Sign Up
+            </button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form id="loginForm">
+
+            <h2>Welcome back!</h2>
+            <p class="subtitle">
+                Enter your details to access your account.
+            </p>
+
+            <label for="loginUsername">Username</label>
+            <input id="loginUsername"
+                   name="username"
+                   type="text"
+                   placeholder="Enter username"
+                   autocomplete="username"
+                   required>
+
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword"
+                   name="password"
+                   type="password"
+                   placeholder="Enter password"
+                   autocomplete="current-password"
+                   required>
+
+            <button class="submit-btn" type="submit">
+                Login
+            </button>
+
+            <p id="loginMessage" class="message" role="status"></p>
+
+            <p class="switch-text">
+                New here?
+                <a href="#"
+                   onclick="showForm('signup'); return false;">
+                    Create an account
+                </a>
+            </p>
+
+        </form>
+
+        <!-- SIGN UP FORM -->
+        <form id="signupForm" hidden>
+
+            <h2>Create your account</h2>
+            <p class="subtitle">Get started with SecureBank.</p>
+
+            <label for="signupUsername">Username</label>
+            <input id="signupUsername"
+                   name="username"
+                   type="text"
+                   placeholder="Choose a username"
+                   autocomplete="username"
+                   required
+                   minlength="3">
+
+            <!-- NEW EMAIL FIELD -->
+            <label for="signupEmail">Email Address</label>
+            <input id="signupEmail"
+                   name="email"
+                   type="email"
+                   placeholder="Enter your email address"
+                   autocomplete="email"
+                   required>
+
+            <label for="signupPassword">Password</label>
+            <input id="signupPassword"
+                   name="password"
+                   type="password"
+                   placeholder="Create a password"
+                   autocomplete="new-password"
+                   required
+                   minlength="8">
+
+            <label for="confirmPassword">Confirm password</label>
+            <input id="confirmPassword"
+                   name="confirmPassword"
+                   type="password"
+                   placeholder="Re-enter password"
+                   autocomplete="new-password"
+                   required
+                   minlength="8">
+
+            <button class="submit-btn" type="submit">
+                Create Account
+            </button>
+
+            <p id="signupMessage" class="message" role="status"></p>
+
+            <p class="switch-text">
+                Already registered?
+                <a href="#"
+                   onclick="showForm('login'); return false;">
+                    Login
+                </a>
+            </p>
+
+        </form>
+
+    </div>
+</div>
+
+<script src="auth.js"></script>
+
+</body>
+</html>
